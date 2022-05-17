@@ -2,13 +2,11 @@ def bubble_sort(arr)
   arr_end_sorted = 0
   loop do
     swap_counter = 0
-    arr.each_index do |index|
+    arr.each_index do |i|
        # after n iterations, n elements at the end of the array is already sorted:
-      break if index == arr.length - 1 - arr_end_sorted
-      if arr[index] > arr[index + 1]
-        temp = arr[index]
-        arr[index] = arr[index + 1]
-        arr[index + 1] = temp
+      break if i == arr.length - 1 - arr_end_sorted
+      if arr[i] > arr[i + 1]
+        arr[i], arr[i + 1] = arr[i + 1], arr[i]
         swap_counter += 1
       end
     end
